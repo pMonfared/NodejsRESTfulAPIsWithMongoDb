@@ -2,7 +2,7 @@ const winston = require('winston');
 const mongoose = require('mongoose');
 
 module.exports = function (config) { 
-  const db = `${config.get('db.instance')}${config.get('db.name')}`;
+  const db = `${config.get('db')}`;
   console.log(config);
   mongoose.connect(db,{
         useNewUrlParser: true,

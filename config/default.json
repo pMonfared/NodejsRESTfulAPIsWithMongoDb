@@ -1,6 +1,4 @@
 {
     "name":"My First Node App",
-    "db":{
-        "name":"NodjsRESTfulAPIsWithMongoDb"
-    }
+    "db":"mongodb://localhost/NodjsRESTfulAPIs_db"
 }

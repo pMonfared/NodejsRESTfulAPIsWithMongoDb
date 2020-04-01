@@ -4,8 +4,6 @@
         "host": "dev-mail-server",
         "password":"MAIL_PASSWORD"
     },
-    "db":{
-        "instance":"MONGO_DB_INSTANCE"
-    },
+    "db":"NODEJSRESTFULAPI_DB_CONNECTIONSTRING",
     "jwtPrivateKey": "JWT_API_KEY"
 }
