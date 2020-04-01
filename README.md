@@ -17,7 +17,9 @@ So now! you must install dependency packages: (please run below command in proje
 
 Welldone! app is ready to run now. run below command
 
-``` nodemon index.js ```
+``` npm start-local-test ```
+``` npm start-local-dev ```
+``` npm start-local-prod ```
 
 tadaaa!
 
