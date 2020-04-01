@@ -27,6 +27,7 @@ module.exports = function () {
                 all: true
             })
           ),
+        handleExceptions: true
     }));
 
     // winston.add(new winston.transports.MongoDB({
