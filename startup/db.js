@@ -1,9 +1,9 @@
 const winston = require('winston');
 const mongoose = require('mongoose');
+const config = require('config');
 
-module.exports = function (config) { 
+module.exports = function () { 
   const db = `${config.get('db')}`;
-  console.log(config);
   mongoose.connect(db,{
         useNewUrlParser: true,
         useUnifiedTopology: true

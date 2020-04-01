@@ -1,7 +1,8 @@
 const winston = require('winston');
 // require('winston-mongodb');
+const config = require('config');
 
-module.exports = function (config) {
+module.exports = function () {
     process.on('unhandledRejection', (ex) => { 
         throw ex;
     })

@@ -1,16 +1,15 @@
 
 
-const config = require('config');
 const express = require('express');
 const winston = require('winston');
 require('express-async-errors');
 
 const app = express();
 require('./startup/prod')(app);
-require('./startup/logging')(config);
+require('./startup/logging')();
 require('./startup/routes')(app);
-require('./startup/db')(config);
-require('./startup/config')(config);
+require('./startup/db')();
+require('./startup/config')();
 require('./startup/validation')();
 
 
