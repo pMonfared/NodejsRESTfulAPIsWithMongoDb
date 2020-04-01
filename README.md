@@ -18,7 +18,13 @@ So now! you must install dependency packages: (please run below command in proje
 Welldone! app is ready to run now. run below command
 
 ``` npm start-local-test ```
+
+or
+
 ``` npm start-local-dev ```
+
+or
+
 ``` npm start-local-prod ```
 
 tadaaa!
