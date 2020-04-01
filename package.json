@@ -8,7 +8,7 @@
     "test": "cross-env NODE_ENV=test jest --setupFiles dotenv/config --watchAll --runInBand --detectOpenHandles --verbose --coverage",
     "start-local-test": "cross-env NODE_ENV=test nodemon -r dotenv/config index.js",
     "start-local-dev": "cross-env NODE_ENV=development nodemon -r dotenv/config index.js",
-    "start-local-prod": "cross-env NODE_ENV=production nodemon -r dotenv/config index.js"
+    "start-local-prod": "cross-env NODE_ENV=production node -r dotenv/config index.js"
   },
   "engines": {
     "node": "12.16.1"
