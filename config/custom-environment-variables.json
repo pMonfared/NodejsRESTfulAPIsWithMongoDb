@@ -1,0 +1,11 @@
+{
+    "name":"My First Node App - Development",
+    "mail":{
+        "host": "dev-mail-server",
+        "password":"MAIL_PASSWORD"
+    },
+    "db":{
+        "instance":"MONGO_DB_INSTANCE"
+    },
+    "jwtPrivateKey": "JWT_API_KEY"
+}
