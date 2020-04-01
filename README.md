@@ -1,7 +1,9 @@
 
 Hi!
 
-# This is a simple nodejs RESTful APIs app with express framework.
+# This is a nodejs RESTful APIs app by express framework and MongoDb.
+# test driven deployment
+# heroku deployment config
 
 First things need to do is:
 
