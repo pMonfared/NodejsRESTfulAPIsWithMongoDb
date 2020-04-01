@@ -1,5 +1,5 @@
-const helmet = required('helmet');
-const compression = required('compression');
+const helmet = require('helmet');
+const compression = require('compression');
 
 module.exports = function(app) {
     app.use(helmet());

@@ -1,7 +1,13 @@
 
 Hi!
 
-# This is a simple nodejs RESTful APIs app with express framework.
+# This is a nodejs RESTful APIs app by express framework and MongoDb.
+
+
+
+test driven deployment
+
+heroku deployment config
 
 First things need to do is:
 
@@ -17,7 +23,15 @@ So now! you must install dependency packages: (please run below command in proje
 
 Welldone! app is ready to run now. run below command
 
-``` nodemon index.js ```
+``` npm start-local-test ```
+
+or
+
+``` npm start-local-dev ```
+
+or
+
+``` npm start-local-prod ```
 
 tadaaa!
 
