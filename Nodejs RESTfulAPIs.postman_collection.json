@@ -6,125 +6,229 @@
 	},
 	"item": [
 		{
-			"name": "Create Course",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\":\"Nodejs Course 1\",\n\t\"category\":\"web\",\n\t\"author\":\"Pooria Monfared\",\n\t\"tags\":[\"backend\",\"nodejs\"],\n\t\"isPublished\":true,\n\t\"price\":12.5\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"poriya.monfared@gmail.com\",\n  \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API}}/api/auth",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/courses",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"courses"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Update Course",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\":\"Nodejs Course 1 updated\",\n\t\"category\":\"network\",\n\t\"author\":\"Pooria M\",\n\t\"tags\":[\"backend\",\"nodejs\",\"mongodb\"],\n\t\"isPublished\":false,\n\t\"price\":16.8\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Pooria Monfared\",\n  \"email\":\"poriya.monfared@gmail.com\",\n  \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API}}/api/users",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:5000/api/courses/{{put-database-course-id-here}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"courses",
-						"{{put-database-course-id-here}}"
-					]
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API}}/api/users/profile",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Delete Course",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/api/courses/{{put-database-course-id-here}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"courses",
-						"{{put-database-course-id-here}}"
-					]
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Nodejs Course 1\",\n\t\"category\":\"web\",\n\t\"author\":\"Pooria Monfared\",\n\t\"tags\":[\"backend\",\"nodejs\"],\n\t\"isPublished\":true,\n\t\"price\":12.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API}}/api/courses",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Nodejs Course 1 updated\",\n\t\"category\":\"network\",\n\t\"author\":\"Pooria M\",\n\t\"tags\":[\"backend\",\"nodejs\",\"mongodb\"],\n\t\"isPublished\":false,\n\t\"price\":16.8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API}}/api/courses/{{put-database-course-id-here}}",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"{{put-database-course-id-here}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/courses/{{put-database-course-id-here}}?x-auth-token={{token}}",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"courses",
+								"{{put-database-course-id-here}}"
+							],
+							"query": [
+								{
+									"key": "x-auth-token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/api/courses/{{put-database-course-id-here}}",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"{{put-database-course-id-here}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/api/courses",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Course",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/api/courses/{{put-database-course-id-here}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"courses",
-						"{{put-database-course-id-here}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Courses",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/api/courses",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"courses"
-					]
-				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
