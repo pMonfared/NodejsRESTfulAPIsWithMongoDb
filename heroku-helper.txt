@@ -1,0 +1,24 @@
+heroku -v
+
+heroku login
+
+git remote -v
+
+heroku create <your-app-name>
+
+git push heroku master
+
+heroku logs
+
+set enviroment:
+heroku config:set NODE_ENV=production
+
+get enviroment list:
+heroku config
+
+
+how to resetting heroku app name after change in heroku dashboard setting
+you must run below cmd:
+
+git remote rm heroku
+heroku git:remote -a <your-app-newName>
